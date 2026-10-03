@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#7c3aed">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="CSM Attendance">
+<link rel="apple-touch-icon" href="icons/icon-192.png">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="stylesheet" href="style.css">
+<title>CSM-C Attendance</title>
+</head>
+<body>
+<div class="app">
+  <header class="topbar">
+    <div>
+      <div class="eyebrow">II-I CSM C</div>
+      <h1>Attendance Assistant</h1>
+      <p>CR tool • iPhone friendly</p>
+    </div>
+    <button class="iconbtn" id="installBtn" title="Install" hidden>＋</button>
+  </header>
+
+  <main>
+    <section class="card controls">
+      <label>Date<input id="date" type="date"></label>
+      <label>Class
+        <select id="section"><option value="CSM-C">CSM-C</option><option value="LE">LE</option></select>
+      </label>
+      <label>Subject<input id="subject" type="text" placeholder="e.g. Java"></label>
+    </section>
+
+    <section class="stats">
+      <div class="stat"><span>Total</span><b id="total">65</b></div>
+      <div class="stat"><span>Present</span><b id="present">65</b></div>
+      <div class="stat"><span>Absent</span><b id="absent">0</b></div>
+      <div class="stat"><span>Percent</span><b id="percent">100%</b></div>
+    </section>
+
+    <section class="card">
+      <div class="sectionhead">
+        <div>
+          <h2>Mark absentees</h2>
+          <p>Tap a roll number to mark absent.</p>
+        </div>
+        <div class="actions">
+          <button class="small" id="clearBtn">Clear</button>
+          <button class="small primary" id="allBtn">All Present</button>
+        </div>
+      </div>
+      <input id="search" class="search" placeholder="Search roll number…" autocomplete="off">
+      <div id="rollGrid" class="rollgrid"></div>
+    </section>
+
+    <section class="card">
+      <div class="sectionhead">
+        <div><h2>WhatsApp message</h2><p>Ready to copy and send to faculty.</p></div>
+      </div>
+      <textarea id="message" readonly></textarea>
+      <div class="actions wide">
+        <button class="primary" id="copyBtn">Copy Message</button>
+        <button id="shareBtn">Share</button>
+      </div>
+    </section>
+
+    <section class="card info">
+      <h2>LE</h2>
+      <p>Switch Class to <b>LE</b> above to use the 6 LE roll numbers.</p>
+      <h2>Install on iPhone</h2>
+      <p>Open this site in Safari → Share → <b>Add to Home Screen</b>.</p>
+    </section>
+  </main>
+  <footer>CSM-C • 65 Regular + 6 LE • Data stays on this device</footer>
+</div>
+<div id="toast" class="toast"></div>
+<script src="data.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
